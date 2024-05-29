@@ -1,0 +1,113 @@
+
+@Restaurants.API_HostAddress = https://localhost:7070
+@token = CfDJ8GhYRcg6cqNLmctUjSelFbPwKfK_PXoejQy6R2UBpbKRjetOVm4QuqHVMXZnOz1WW9O_pvqqzyMwglBjkHlaktTGyJ-9YOzJBh6Lu5SIxpxULgtEGFsyVDD44h-xdBS-QBOU0O-eTcStsPRFWWCsnZge45T_U_-1kazG73_5FW6lAkbN7uD1kTyZTkuulio0WbjMsFusAWx84qcDXEmVdwx3gT0Bhj9l6EU3C7S_YEC5heHZQ9zIJ7yy5Z406dFtPgl3NvjUUibSFE0CfFvA4fsR-XChM7O7w7snehqU4YKR_AFfIDo870gSgrw6zDLPqoVYKsz4KJaLn4241ajkfL7k2hHLtRzD7Sup7wurOGaWPTjAHsDurqRtacUH8Pw1JGQ24UTqnAOklEpaFUtxTH7l4n3zBrtCtPxbmcDZmiL62KY9IeKbTTKTzINqsLhPbl2FMmUCuyAiTK3nUgXuSodcpFdmqILr2IpoNhTJIDNDXLcbcPlYCFdItQhZ8J6ABiVmgmBfrHiQ-xKnKU8Xhgnw2WPugGkYKn9MSbOQDl3_yw6qiiZ2UIx3n87tOpFxoEI8Mb2IAqkI3MVkSU6rxQkVZvMwAetb4p5m1F6jkbaw3Ro5zPeXOIdLpSCE1hjxUBXB25q5z8WRk67EC9V5RCFTZ6zhGc2OIXNCpGxQtPBXlICabkBnEXuQfYWADn3SMtnhEGbTck_2FJmn_HpdmrvPyVuobHxBEn-SHb-wbCVQwvml8F796-u_a6Ct6wS2hDtqHDlqCRicSHhksA8_2lW-FFJgCCZC7y0G8a7hACVoWupMj3QkNBdJ0eNkn0sSWPe9wyzAbvkKrR48vTCAljt6zpF0oUmw2vw4V5LKcvqRg8R7iYH3nZEn7c-2j2THVA
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants?searchPhrase=wiza&pageSize=5&pageNumber=1&sortBy=Name&sortDirection=Descending
+Authorization: Bearer {{token}}
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/5
+Authorization: Bearer {{token}}
+###
+
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+  "Name": "Spicy Delights dasdasdasd",
+  "Description": "A culinary experiance like no other",
+  "Category": "Fine Dining",
+  "HasDelivery": true,
+  "ContactEmail": "info@gourmetdelights.com",
+  "ContactNumber": "555-123-4567",
+  "City": "Metropolies",
+  "Street": "456 Gourmet Avenue",
+  "PostalCode": "54321"
+}
+
+###
+GET https://localhost:7070/api/restaurants/7
+
+
+
+###
+DELETE https://localhost:7070/api/restaurants/9
+Authorization: Bearer {{token}}
+
+###
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "Name": "Owner restaurant",
+  "Description": "A culinary experiance like no other",
+  "Category": "Indian",
+  "HasDelivery": true,
+  "ContactEmail": "info@gourmetdelights.com",
+  "ContactNumber": "555-1234",
+  "City": "Metropolies",
+  "Street": "456 Gourmet Avenue",
+  "PostalCode": "10-001"
+}
+
+###
+
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/3
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "Name": "Updated Name",
+  "Description": "A culinarydf sdad experiance like no other",
+  "HasDelivery": true
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurant/3/dishes
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+ 
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/identity/register
+Content-Type: application/json
+
+{
+  "email": "user@test.com",
+  "password": "Password1!"
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/identity/login
+Content-Type: application/json
+
+{
+  "email": "owner@test.com",
+  "password": "Password1!"
+}
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/identity/user
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "Nationality": "French",
+  "DateOfBirth": "2010-01-01"
+}
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/3/dishes
+Authorization: Bearer {{token}}
+###
